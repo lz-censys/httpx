@@ -1589,7 +1589,7 @@ retry:
 	if r.options.ResponseBodyPreviewSize > 0 && resp != nil {
 		bodyPreview = string(resp.Data)
 		if stringsutil.EqualFoldAny(r.options.StripFilter, "html", "xml") {
-			bodyPreview = r.hp.Sanitize(bodyPreview, true, true)
+			bodyPreview = r.hp.Sanitize(bodyPreview, false, true)
 		} else {
 			bodyPreview = strings.ReplaceAll(bodyPreview, "\n", "\\n")
 			bodyPreview = httputilz.NormalizeSpaces(bodyPreview)
