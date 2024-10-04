@@ -1499,8 +1499,11 @@ retry:
 		}
 	}
 
+	var outputCustomHostHeader string
+
 	if scanopts.OutputCustomHostHeader {
 		builder.WriteString(fmt.Sprintf(" [%s]", target.CustomHost))
+		outputCustomHostHeader = target.CustomHost
 	}
 
 	if scanopts.OutputStatusCode {
@@ -2046,6 +2049,7 @@ retry:
 		ScreenshotPath:     screenshotPath,
 		ScreenshotPathRel:  screenshotPathRel,
 		HeadlessBody:       headlessBody,
+		HostHeader:         outputCustomHostHeader,
 		KnowledgeBase: map[string]interface{}{
 			"PageType": r.errorPageClassifier.Classify(respData),
 			"pHash":    pHash,

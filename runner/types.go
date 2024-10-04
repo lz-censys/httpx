@@ -86,6 +86,7 @@ type Result struct {
 	ScreenshotPath     string                 `json:"screenshot_path,omitempty" csv:"screenshot_path"`
 	ScreenshotPathRel  string                 `json:"screenshot_path_rel,omitempty" csv:"screenshot_path_rel"`
 	KnowledgeBase      map[string]interface{} `json:"knowledgebase,omitempty" csv:"knowledgebase"`
+	HostHeader         string                 `json:"host_header,omitempty" csv:"host_header"`
 }
 
 // function to get dsl variables from result struct
